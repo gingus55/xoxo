@@ -1,0 +1,21 @@
+select {
+  color: blue;
+  font-size: larger;
+  width: 80%;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4%;
+}

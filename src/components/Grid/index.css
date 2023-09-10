@@ -1,2 +1,18 @@
 #holder {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
+
+td {
+  width: 25vh;
+  height: 25vh;
+  font-size: 22vh;
+  border: 1px solid black;
+  text-align: center;
+}
+
+/* td:hover {
+  font-size: 2vw;
+} */

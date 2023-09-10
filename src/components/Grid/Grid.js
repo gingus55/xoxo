@@ -1,25 +1,16 @@
 import React from "react";
 import "./index.css";
+import Row from "../Row/Row";
 
-function Grid() {
+function Grid(rows, columns) {
   return (
     <div id="holder">
       <table>
-        <tr>
-          <td>X</td>
-          <td>X</td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <td>X</td>
-          <td>X</td>
-          <td>X</td>
-        </tr>
-        <tr>
-          <td>X</td>
-          <td>X</td>
-          <td>X</td>
-        </tr>
+        <tbody>
+          <Row />
+          <Row />
+          <Row />
+        </tbody>
       </table>
     </div>
   );
