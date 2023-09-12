@@ -16,6 +16,7 @@ function Cell({ loc }) {
 
   const handleClick = (e) => {
     setValue("X");
+    console.log(e.target.getAttribute("data-loc"));
   };
   return (
     <td
