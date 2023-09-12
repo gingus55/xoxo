@@ -3,11 +3,14 @@ import "./index.css";
 import { Link } from "react-router-dom";
 
 function Welcome() {
-  const [selectedRows, setSelectedRows] = useState("1");
-  const [selectedColumns, setSelectedColumns] = useState("1");
+  const [selectedRows, setSelectedRows] = useState("3");
+  const [selectedColumns, setSelectedColumns] = useState("3");
 
   const handleRowsChange = (event) => {
+    event.preventDefault();
+    console.log(event.target.value);
     setSelectedRows(event.target.value);
+    console.log(selectedRows);
   };
 
   const handleColumnsChange = (event) => {
@@ -21,10 +24,10 @@ function Welcome() {
         <>
           <h3>Rows</h3>
           <select id="rows" value={selectedRows} onChange={handleRowsChange}>
-            <option value="1">3</option>
-            <option value="2">4</option>
-            <option value="3">5</option>
-            <option value="4">6</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
           </select>
         </>
         <>
@@ -34,20 +37,15 @@ function Welcome() {
             value={selectedColumns}
             onChange={handleColumnsChange}
           >
-            <option value="1">3</option>
-            <option value="2">4</option>
-            <option value="3">5</option>
-            <option value="4">6</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
           </select>
         </>
         <Link
-          to={{
-            pathname: "/game",
-            state: {
-              rows: selectedRows,
-              columns: selectedColumns,
-            },
-          }}
+          to="/game"
+          state={{ rows: { selectedRows }, columns: { selectedColumns } }}
         >
           Go to Game
         </Link>
