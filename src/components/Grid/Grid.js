@@ -3,10 +3,9 @@ import "./index.css";
 import Row from "../Row/Row";
 
 function Grid({ rows, columns }) {
-  console.log(rows.selectedRows, columns);
   const rowsArray = [];
   for (let i = 0; i < rows.selectedRows; i++) {
-    rowsArray.push(<Row key={i} columns={columns.selectedColumns} />);
+    rowsArray.push(<Row data={i} key={i} columns={columns.selectedColumns} />);
   }
 
   return (
