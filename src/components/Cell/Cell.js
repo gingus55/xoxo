@@ -5,7 +5,7 @@ import checkWin from "../../hooks/gameStatus";
 function Cell({ loc }) {
   const coord = [loc.data, loc.i];
   const [value, setValue] = useState(" ");
-  const [clickedArray, setClickedArray] = useState([]);
+  //   const [clickedArray, setClickedArray] = useState([]);
 
   const handleMouseOver = (e) => {
     e.target.style.backgroundColor = "#e74c3c";
@@ -19,11 +19,11 @@ function Cell({ loc }) {
 
   const handleClick = (e) => {
     setValue("X");
-    setClickedArray([...clickedArray, e.target.getAttribute("data-loc")]);
+    // setClickedArray([...clickedArray, e.target.getAttribute("data-loc")]);
 
     // console.log(e.target.getAttribute("data-loc"));
-    checkWin();
-    console.log(clickedArray);
+    checkWin(e.target.getAttribute("data-loc"));
+    // console.log(clickedArray);
   };
   return (
     <td
