@@ -25,7 +25,11 @@ const checkWin = (value, length) => {
 
   console.log("checking for winning line");
   if (selectedArray.length >= 3) {
-    confirmWin(selectedArray);
+    const won = confirmWin(selectedArray);
+    console.log(won);
+    if (won) {
+      return true;
+    }
   } else {
     console.log("not enough selected to win");
   }

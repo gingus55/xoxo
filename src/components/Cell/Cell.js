@@ -22,7 +22,9 @@ function Cell({ loc }) {
     // setClickedArray([...clickedArray, e.target.getAttribute("data-loc")]);
 
     // console.log(e.target.getAttribute("data-loc"));
-    checkWin(e.target.getAttribute("data-loc"));
+    const won = checkWin(e.target.getAttribute("data-loc"));
+    console.log(won);
+    won ? console.log("you win") : console.log("keep going");
     // console.log(clickedArray);
   };
   return (
