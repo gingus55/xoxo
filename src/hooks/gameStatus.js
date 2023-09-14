@@ -1,5 +1,21 @@
 let selectedArray = [];
 
+function generateCombinationsWithLastAdded(arr) {
+  const combinations = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      for (let k = 0; k < arr.length; k++) {
+        if (k !== i && k !== j) {
+          combinations.push([arr[i], arr[j], arr[k]]);
+        }
+      }
+    }
+  }
+
+  return combinations;
+}
+
 const arePointsInLine = (array) => {
   let point1 = array[0];
   let point2 = array[1];
@@ -25,8 +41,10 @@ const checkWin = (value, length) => {
 
   console.log("checking for winning line");
   if (selectedArray.length >= 3) {
+    const combis = generateCombinationsWithLastAdded(selectedArray);
+    combis.forEach((e) => confirmWin(e));
     const won = confirmWin(selectedArray);
-    console.log(won);
+
     if (won) {
       return true;
     }
